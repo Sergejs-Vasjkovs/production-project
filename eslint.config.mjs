@@ -32,6 +32,10 @@ export default [
       'no-underscore-dangle': 'off',
       "react/no-deprecated": 'warn',
       "@typescript-eslint/no-require-imports": "off",
+      'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
   },
+  {
+    "plugins": ["i18next"]
+  }
 ];
