@@ -3,10 +3,11 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContex
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
+// eslint-disable-next-line react/prop-types
 const ThemeProvider: React.FC = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-    const dafaultProps = useMemo(
+    const defaultProps = useMemo(
         () => ({
             theme: theme,
             setTheme: setTheme,
@@ -14,7 +15,7 @@ const ThemeProvider: React.FC = ({ children }) => {
         [theme],
     );
 
-    return <ThemeContext.Provider value={dafaultProps}>{children}</ThemeContext.Provider>;
+    return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;
