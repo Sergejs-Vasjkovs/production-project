@@ -1,5 +1,9 @@
 {
   "AboutPage": "AboutPage",
   "Language": "Language",
-  "MainPage": "MainPage"
+  "MainPage": "MainPage",
+  "NotFoundPage": "NotFoundPage",
+  "Refresh the page": "Refresh the page",
+  "Somthing went wrong!!!": "Somthing went wrong!!!",
+  "throw error": "throw error"
 }
