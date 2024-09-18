@@ -1,5 +1,7 @@
 {
     "Welcome text": "Welcome to react using react-i18next",
+    "MainPage": "Main Page",
+    "AboutPage": "About Page",
     "Translate": "Translate",
     "Language": "Française"
 }

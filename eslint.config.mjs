@@ -1,18 +1,22 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tseslint from "@typescript-eslint/eslint-plugin"; // Correct import for the plugin
+import tsParser from "@typescript-eslint/parser"; // Needed for TypeScript parsing
 import pluginReact from "eslint-plugin-react";
+import pluginI18next from "eslint-plugin-i18next";
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
   {
-    ignores: ["node_modules", "build", "eslint.config.mjs"], // Exclude these directories
-  },
-  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: {
+      parser: tsParser, // Use the TypeScript parser
+      globals: globals.browser,
+    },
+    plugins: {
+      i18next: pluginI18next, // Plugin as an object
+      react: pluginReact, // Plugin as an object
+      "@typescript-eslint": tseslint, // Plugin as an object
+    },
     rules: {
       'react/jsx-indent': [2, 4],
       'react/jsx-indent-props': [2, 4],
@@ -32,10 +36,16 @@ export default [
       'no-underscore-dangle': 'off',
       "react/no-deprecated": 'warn',
       "@typescript-eslint/no-require-imports": "off",
-      'i18next/no-literal-string': ['error', { markupOnly: true }],
+      'i18next/no-literal-string': [
+        'error',
+        {
+          markupOnly: true,
+          ignoreAttribute: ['data-testid', 'to'], // Ignore 'to' and 'data-testid' attributes
+        },
+      ],
     },
   },
   {
-    "plugins": ["i18next"]
-  }
+    ignores: ["node_modules", "build", "eslint.config.mjs"], // Exclude these directories
+  },
 ];
