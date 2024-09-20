@@ -9,7 +9,7 @@ import { ErrorBoundary } from "./app/providers/ErrorBoundary";
 render(
     <BrowserRouter>
         <ErrorBoundary>
-            <ThemeProvider initialTheme={Theme.LIGHT}>
+            <ThemeProvider initialTheme={Theme.DARK}>
                 <App />
             </ThemeProvider>
         </ErrorBoundary>
