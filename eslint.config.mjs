@@ -4,6 +4,7 @@ import tseslint from "@typescript-eslint/eslint-plugin"; // Correct import for t
 import tsParser from "@typescript-eslint/parser"; // Needed for TypeScript parsing
 import pluginReact from "eslint-plugin-react";
 import pluginI18next from "eslint-plugin-i18next";
+import pluginReactHooks from "eslint-plugin-react-hooks";
 
 export default [
   {
@@ -16,6 +17,7 @@ export default [
       i18next: pluginI18next, // Plugin as an object
       react: pluginReact, // Plugin as an object
       "@typescript-eslint": tseslint, // Plugin as an object
+      "react-hooks": pluginReactHooks, // Add react-hooks plugin
     },
     rules: {
       'react/jsx-indent': [2, 4],
@@ -43,6 +45,8 @@ export default [
           ignoreAttribute: ['data-testid', 'to'], // Ignore 'to' and 'data-testid' attributes
         },
       ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error"
     },
   },
   {
