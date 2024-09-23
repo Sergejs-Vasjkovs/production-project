@@ -5,14 +5,17 @@ import "./app/styles/index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { Theme, ThemeProvider } from "./app/providers/ThemeProvider";
 import { ErrorBoundary } from "./app/providers/ErrorBoundary";
+import { StoreProvider } from "app/providers/StoreProvider";
 
 render(
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider initialTheme={Theme.DARK}>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider initialTheme={Theme.DARK}>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>,
     document.getElementById("root"),
 );

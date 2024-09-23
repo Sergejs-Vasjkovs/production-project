@@ -27,5 +27,17 @@
             "}"
         ],
         "description": "Typescript React Function Component"
+    },
+
+    "React test component": {
+        "prefix": "rtc",
+        "body": [
+            "describe('${TM_FILENAME_BASE}', () => {",
+            "    test('', () => {",
+            "        expect().toEqual();",
+            "    });",
+            "});"
+        ],
+        "description": "Typescript React Function Component"
     }
 }
