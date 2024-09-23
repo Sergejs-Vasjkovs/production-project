@@ -1,8 +1,8 @@
 .app_dark_theme {
-    --bg-color: #090949;
-    --inverted-bg-color: #e8e8ea;
-    --primary-color: #049604;
-    --secondary-color: #04ff04;
-    --inverted-primary-color: #0232c2;
-    --inverted-secondary-color: #0452ff;
+    --bg-color: #1a1b26; /* Deep navy blue for a smooth dark background */
+    --inverted-bg-color: #f5f6f7; /* Light neutral as the contrast color */
+    --primary-color: #ff6f61; /* Warm, modern coral */
+    --secondary-color: #ffa36c; /* A complementary orange-peach */
+    --inverted-primary-color: #0073e6; /* Vibrant blue for contrast */
+    --inverted-secondary-color: #00e5ff; /* Bright cyan for a modern pop */
 }
