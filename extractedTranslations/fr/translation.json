@@ -3,6 +3,10 @@
   "About page": "About page",
   "AboutPage": "AboutPage",
   "Enter": "Enter",
+  "Enter Password": "Enter Password",
+  "Enter Username": "Enter Username",
+  "EnterPassword": "EnterPassword",
+  "EnterUsername": "EnterUsername",
   "Language": "Language",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
@@ -14,12 +18,14 @@
   "MainPage": "MainPage",
   "NotFoundPage": "NotFoundPage",
   "Refresh the page": "Refresh the page",
+  "Something went wrong!": "Something went wrong!",
   "Something went wrong!!!": "Something went wrong!!!",
   "Somthing went wrong!!!": "Somthing went wrong!!!",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
   "toggle": "Basculer",
+  "Введите username": "Введите username",
   "Главная": "Главная",
   "О сайте": "О сайте"
 }

@@ -6,5 +6,7 @@
     "Language": "English",
     "LanguageShort": "Eng",
     "toggle": "Basculer",
-    "Enter": "Entrer"
+    "Enter": "Entrer",
+    "EnterUsername": "Entrez le nom d'utilisateur",
+    "EnterPassword": "Entrez le mot de passe"
 }
