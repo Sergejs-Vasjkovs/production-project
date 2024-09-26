@@ -3,10 +3,18 @@ import { AppRouter } from "./providers/ThemeProvider/router";
 import { NavBar } from "widgets/NavBar";
 
 import { SideBar } from "widgets/SideBar";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { PageLoader } from "widgets/PageLoader/PageLoader";
+import { userActions } from "entities/User";
+import { useAppDispatch } from "./providers/StoreProvider/hooks/useAppDispatch";
 
 const App = () => {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
+
     return (
         <div className={classNames("app", {}, [])}>
             <Suspense fallback={<PageLoader />}>

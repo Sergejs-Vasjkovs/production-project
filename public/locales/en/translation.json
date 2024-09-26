@@ -8,5 +8,8 @@
     "toggle": "Toggle",
     "Enter": "Enter",
     "EnterUsername": "Enter User Name",
-    "EnterPassword": "Enter Password"
+    "EnterPassword": "Enter Password",
+    "AuthorizationForm": "Authorization form",
+    "ErrorForm": "You have entered an incorrect login or password",
+    "Exit": "Exit"
 }

@@ -2,11 +2,14 @@
   "About Page": "About Page",
   "About page": "About page",
   "AboutPage": "AboutPage",
+  "Authorization form": "Authorization form",
   "Enter": "Enter",
   "Enter Password": "Enter Password",
   "Enter Username": "Enter Username",
   "EnterPassword": "EnterPassword",
   "EnterUsername": "EnterUsername",
+  "ErrorForm": "ErrorForm",
+  "Exit": "Exit",
   "Language": "Language",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
@@ -26,6 +29,9 @@
   "throw error": "throw error",
   "toggle": "Basculer",
   "Введите username": "Введите username",
+  "Вы ввели неверный логин или пароль": "Вы ввели неверный логин или пароль",
+  "Выйти": "Выйти",
   "Главная": "Главная",
-  "О сайте": "О сайте"
+  "О сайте": "О сайте",
+  "Форма авторизации": "Форма авторизации"
 }
