@@ -36,6 +36,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "Alex",
+        "lastname": "Morgan",
+        "age": 35,
+        "currency": "USTD",
+        "country": "USA",
+        "city": "New York",
+        "username": "soccerplayer",
+        "avatar": "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?w=740"
     }
 }

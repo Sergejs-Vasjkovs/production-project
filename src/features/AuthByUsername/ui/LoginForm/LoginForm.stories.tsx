@@ -9,6 +9,9 @@ const meta = {
     title: "features/LoginForm",
     component: LoginForm,
     argTypes: {},
+    args: {
+        onSuccess: () => {},
+    },
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;

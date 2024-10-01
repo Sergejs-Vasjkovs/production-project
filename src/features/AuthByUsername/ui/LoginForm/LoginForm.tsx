@@ -8,7 +8,7 @@ import { memo, useCallback } from "react";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/service/loginByUsername/loginByUsername";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { useAppDispatch } from "app/providers/StoreProvider/hooks/useAppDispatch";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -20,13 +20,14 @@ import {
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const username = useSelector(getLoginUsername);
@@ -49,9 +50,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         [dispatch],
     );
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess();
+        }
+    }, [dispatch, password, username, onSuccess]);
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
@@ -67,7 +71,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
                     value={username}
                 />
                 <Input
-                    type="text"
+                    type="password"
                     className={cls.input}
                     placeholder={t("EnterPassword")}
                     onChange={onChangePassword}

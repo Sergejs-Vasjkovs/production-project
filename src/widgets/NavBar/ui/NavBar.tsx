@@ -6,7 +6,7 @@ import { useCallback, useState } from "react";
 import { LoginModal } from "features/AuthByUsername";
 import { useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
-import { useAppDispatch } from "app/providers/StoreProvider/hooks/useAppDispatch";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface NavBarProps {
     className?: string;

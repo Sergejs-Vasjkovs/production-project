@@ -19,6 +19,11 @@ export default [
       "@typescript-eslint": tseslint, // Plugin as an object
       "react-hooks": pluginReactHooks, // Add react-hooks plugin
     },
+    settings: {
+      react: {
+        version: "detect",
+      }
+    },
     rules: {
       'react/jsx-indent': [2, 4],
       'react/jsx-indent-props': [2, 4],

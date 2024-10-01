@@ -6,7 +6,7 @@ import { SideBar } from "widgets/SideBar";
 import { Suspense, useEffect } from "react";
 import { PageLoader } from "widgets/PageLoader/PageLoader";
 import { userActions } from "entities/User";
-import { useAppDispatch } from "./providers/StoreProvider/hooks/useAppDispatch";
+import { useAppDispatch } from "../shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 const App = () => {
     const dispatch = useAppDispatch();

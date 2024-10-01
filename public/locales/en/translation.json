@@ -11,5 +11,6 @@
     "EnterPassword": "Enter Password",
     "AuthorizationForm": "Authorization form",
     "ErrorForm": "You have entered an incorrect login or password",
-    "Exit": "Exit"
+    "Exit": "Exit",
+    "ProfilePage": "Profile Page"
 }

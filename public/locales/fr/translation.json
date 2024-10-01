@@ -11,5 +11,6 @@
     "EnterPassword": "Entrez le mot de passe",
     "AuthorizationForm": "Formulaire d'autorisation",
     "ErrorForm": "Vous avez entré un identifiant ou un mot de passe incorrect",
-    "Exit": "Sortie"
+    "Exit": "Sortie",
+    "ProfilePage": "Page de profil"
 }
