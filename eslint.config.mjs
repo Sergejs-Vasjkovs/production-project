@@ -10,14 +10,17 @@ export default [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
-      parser: tsParser, // Use the TypeScript parser
-      globals: globals.browser,
+      parser: tsParser,
+      globals: {
+        __IS_DEV__: true,
+        __API__: true,
+      },
     },
     plugins: {
-      i18next: pluginI18next, // Plugin as an object
-      react: pluginReact, // Plugin as an object
-      "@typescript-eslint": tseslint, // Plugin as an object
-      "react-hooks": pluginReactHooks, // Add react-hooks plugin
+      i18next: pluginI18next,
+      react: pluginReact,
+      "@typescript-eslint": tseslint,
+      "react-hooks": pluginReactHooks,
     },
     settings: {
       react: {
@@ -31,8 +34,8 @@ export default [
       'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
       'import/no-unresolved': 'off',
       'import/prefer-default-export': 'off',
-      'no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': 'warn', // Change error to warning
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'react/require-default-props': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-props-no-spreading': 'warn',
@@ -47,7 +50,7 @@ export default [
         'error',
         {
           markupOnly: true,
-          ignoreAttribute: ['data-testid', 'to'], // Ignore 'to' and 'data-testid' attributes
+          ignoreAttribute: ['data-testid', 'to'],
         },
       ],
       "react-hooks/rules-of-hooks": "error",
@@ -55,6 +58,6 @@ export default [
     },
   },
   {
-    ignores: ["node_modules", "build", "eslint.config.mjs"], // Exclude these directories
+    ignores: ["node_modules", "build", "eslint.config.mjs"],
   },
 ];

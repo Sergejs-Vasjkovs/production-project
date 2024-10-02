@@ -16,3 +16,5 @@ declare module "*.svg" {
 }
 
 declare const __IS_DEV__: boolean;
+e;
+declare const __API__: string;
