@@ -1,18 +1,21 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { getLoginError } from "./getLoginError";
-import { DeepPartial } from "entities/Counter/model/types/counterSchema";
+import { DeepPartial } from "app/types/global";
 
 describe("getLoginError.test", () => {
     test("should return error", () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: {
                 error: "error",
+                username: "",
+                password: "",
+                isLoading: true,
             },
         };
         expect(getLoginError(state as StateSchema)).toEqual("error");
     });
     test("should work with empty state", () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getLoginError(state as StateSchema)).toEqual(undefined);
+        expect(getLoginError(state as StateSchema)).toBeUndefined();
     });
 });

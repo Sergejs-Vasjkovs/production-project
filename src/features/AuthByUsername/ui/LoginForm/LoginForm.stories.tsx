@@ -12,6 +12,9 @@ const meta = {
     args: {
         onSuccess: () => {},
     },
+    decorators: [
+        StoreDecorator({ loginForm: { username: "admin", password: "123", isLoading: true } }),
+    ],
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;
@@ -19,22 +22,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
     args: {},
-    decorators: [StoreDecorator({ loginForm: { username: "admin", password: "123" } })],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [
-        StoreDecorator({ loginForm: { username: "admin", password: "123" } }),
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const WithError: Story = {
     args: {},
     decorators: [
         StoreDecorator({
-            loginForm: { username: "admin", password: "123", error: "ErrorForm" },
+            loginForm: { username: "admin", password: "123", isLoading: false, error: "ErrorForm" },
         }),
     ],
 };
@@ -43,7 +42,7 @@ export const Loading: Story = {
     args: {},
     decorators: [
         StoreDecorator({
-            loginForm: { isLoading: true },
+            loginForm: { username: "admin", password: "123", isLoading: true, error: "ErrorForm" },
         }),
     ],
 };

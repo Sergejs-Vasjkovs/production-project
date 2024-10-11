@@ -1,12 +1,14 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { getLoginPassword } from "./getLoginPassword";
-import { DeepPartial } from "entities/Counter/model/types/counterSchema";
+import { DeepPartial } from "app/types/global";
 
 describe("getLoginPassword.test", () => {
     test("should return value", () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: {
                 password: "123123",
+                username: "",
+                isLoading: true,
             },
         };
         expect(getLoginPassword(state as StateSchema)).toEqual("123123");
